@@ -52,6 +52,8 @@ public class ARPAttack {
             System.out.println("");
         }
 
+        System.out.println("如果某个网络接口显示的ip地址是ipv6而不是ipv4地址说明不支持该网络接口！");
+
         return devices;
     }
 

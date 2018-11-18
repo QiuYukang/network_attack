@@ -6,9 +6,12 @@ import org.junit.Test;
 import java.net.InetAddress;
 
 import static cn.qiuyukang.ARPAttack.getAllNIC;
-import static org.junit.Assert.*;
 
 public class ARPAttackTest {
+    /**
+     * 测试获取所有网络接口
+     * 如果某个网络接口显示的ip地址是ipv6而不是ipv4地址说明不支持该网络接口！
+     */
     @Test
     public void getAllNICTest() {
         ARPAttack.getAllNIC();
@@ -17,6 +20,7 @@ public class ARPAttackTest {
     @Test
     public void arpScan() {
         NetworkInterface[] devices = getAllNIC();
+        // 将接口改成自己想要的网络接口索引即可
         NetworkInterface device = devices[4];
 
         try {
